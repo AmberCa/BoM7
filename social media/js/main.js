@@ -1,4 +1,3 @@
-console.log("hello people");
 let date = document.getElementById("js--date");
 const options = {
   root: null,
@@ -19,7 +18,6 @@ let elements = document.getElementById("js--content");
 function ContentPost(data, post__number){
     for (let i = 0; i < 11; i++) {
         let post = data[i+post__number];
-        console.log(post__number);
         let fname = post.first_name;
         let lname = post.last_name;
         let ptitle = post.title;
@@ -50,7 +48,7 @@ function Posten(fname, lname, ptitle){
     main.appendChild(article);
 }
 function FetchPosts(){
-    fetch("..//data.json")
+    fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
         ContentPost(data, post__number);
@@ -65,7 +63,6 @@ function FetchPosts(){
      if (entry.isIntersecting) {
      FetchPosts();
      } else {
-     console.log("Element is out of view");
      }
      });
      });
