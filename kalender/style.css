@@ -1,0 +1,34 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+header{
+    height: 6rem;
+    padding: 2rem;
+}
+
+h3{
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+ul{
+    background: red;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+li{
+    background: blueviolet;
+    width: 25rem;
+    height: 20rem;
+    list-style: none;
+}
