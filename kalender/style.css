@@ -8,27 +8,120 @@ html{
     font-size: 62.5%;
 }
 
-header{
-    height: 6rem;
+body{
     padding: 2rem;
+    font-family: sans-serif;
+}
+
+/* body::after, body::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 100%;
+    width: 100%;
+    animation: away 1.2s forwards;
+    transform-origin: bottom;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    z-index: 2;
+}
+
+body::before{
+    background: #EEE3CB;
+    animation-delay: 0.2s;
+}
+
+body::after{
+    background: #9BABB8;
+}
+
+@keyframes away {
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+} */
+
+header{
+    background: #EEE3CB;
+    height: 6rem;
+    border-radius: 2rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 3px solid #68554F;
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem;
 }
 
 h3{
     font-size: 2rem;
-    font-family: sans-serif;
+    color: #68554F;
+    padding-right: 1rem;
+}
+
+button{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    border: 2px solid #68554F;
+    background: #D7C0AE;
+    color: #68554F;
+    font-size: 2rem;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 ul{
-    background: red;
+    background: #9BABB8;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    border: 2px solid #68554F;
+    border-top: none;
+    padding: 2rem;
+}
+
+ul>div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 14rem;
+    padding-right: 14rem;
+}
+
+ul>div>p{
+    border-radius: 50%;
+    background: #D7C0AE;
+    border: 2px solid #EEE3CB;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 li{
-    background: blueviolet;
-    width: 25rem;
+    background: #D7C0AE;
+    width: 23rem;
     height: 20rem;
     list-style: none;
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 2px solid #68554F;
+    display: flex;
+    justify-content: space-between;
 }
+
+p{
+    color: #68554F;
+    font-size: 4rem;
+    height: 5rem;
+    width: 5rem;
+}
+

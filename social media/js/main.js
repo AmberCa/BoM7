@@ -12,6 +12,7 @@ const year    = dateObj.getUTCFullYear();
 const newDate =month + "/" + day + "/" + year;
 date.innerHTML=newDate;
 let post__number = 0; 
+
 let main = document.querySelector("main");
 let elements = document.getElementById("js--content");
 
