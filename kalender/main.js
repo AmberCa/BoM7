@@ -33,29 +33,29 @@ function PlaceCard(li,p){
 }
 
 //buttons werkend van maanden bijhouden
-let NdateMoth = dateMonth;
+let NdateMonth = dateMonth;
 let NdateYear = dateYear;
 let Bback = document.getElementById("js--back");
 let Bnext = document.getElementById("js--next");
 Bback.onclick = function(){
-    NdateMoth-=1;
-    if (NdateMoth==0){
-        NdateMoth = 12;
+    NdateMonth-=1;
+    if (NdateMonth==0){
+        NdateMonth = 12;
         NdateYear = dateYear-=1;
     }
-    month.innerText= NdateMoth;
+    month.innerText= NdateMonth;
     year.innerText= NdateYear;
-    FillDatum(NdateMoth, NdateYear);
+    FillDatum(NdateMonth, NdateYear);
 };
 Bnext.onclick = function(){
-    NdateMoth = dateMonth+=1;
-    if (NdateMoth==13){
-        NdateMoth = 1;
+    NdateMonth = dateMonth+=1;
+    if (NdateMonth==13){
+        NdateMonth = 1;
         NdateYear = dateYear+=1;
     }
-    month.innerText= NdateMoth;
+    month.innerText= NdateMonth;
     year.innerText= dateYear;
-    FillDatum(NdateMoth, NdateYear);
+    FillDatum(NdateMonth, NdateYear);
 };
 
 //alles maken van kaartjes en berekenenen
@@ -66,19 +66,22 @@ function MakeAgenda(){
 }
 
 //datum dagen infullen
-function FillDatum(dateMonth, dateYear){
-
-    //dit loot maar 1x dus kijkt niet constant
-    for (let i = 1; i <= new Date(dateYear, dateMonth, 0).getDate(); i++) {
-        //new Date(dateYear, dateMonth, 0).getDate()
-        //hier boven moet van De maand die aangegeven word gemaakt worden
-        let p =document.getElementsByClassName("datum");
-        p[i].innerText=i;   
+function FillDatum(NdateMonth, NdateYear){
+    let p =document.getElementsByClassName("datum");
+    let firstDay = new Date(NdateYear, NdateMonth, 1);
+    console.log(firstDay);
+    for (let i = 1; i <= new Date(NdateYear, NdateMonth, 0).getDate(); i++) {
+        p[i].innerText= "";
     }
-    console.log("vuld de datum in");
-    console.log(new Date(dateYear, dateMonth, 0).getDate());
+    for (let i = 1; i <= new Date(NdateYear, NdateMonth, 0).getDate(); i++) {
+        let x = firstDay.getDay() + i -1;
+        if(x > p.length-1){
+            continue;
+        }
+        p[x].innerText=i;   
+    }
 }
 
 //35x een kaartje maken
 MakeAgenda();
-FillDatum(NdateMoth, dateYear);
+FillDatum(NdateMonth, dateYear);
