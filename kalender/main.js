@@ -67,16 +67,14 @@ function MakeAgenda(){
 
 //datum dagen infullen
 function FillDatum(dateMonth, dateYear){
-    
 
+    //dit loot maar 1x dus kijkt niet constant
     for (let i = 1; i <= new Date(dateYear, dateMonth, 0).getDate(); i++) {
+        //new Date(dateYear, dateMonth, 0).getDate()
+        //hier boven moet van De maand die aangegeven word gemaakt worden
         let p =document.getElementsByClassName("datum");
-        //werkt niet bij andere maanden omdat ie van vandaag altijd pakt met dateToday.getDay() werkt dus ook niet met begin van maand
-        let datumStart= new Date(dateYear, dateMonth, 0).getDate()-1;
-        let x = datumStart +=i;
-        console.log(i);//tot 6?!!
-        p[x].innerText=i;   
-    };
+        p[i].innerText=i;   
+    }
     console.log("vuld de datum in");
     console.log(new Date(dateYear, dateMonth, 0).getDate());
 }

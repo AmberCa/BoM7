@@ -61,10 +61,11 @@ function FetchPosts(){
 
  const observer = new IntersectionObserver((entries, observer) => {
      entries.forEach(entry => {
-     if (entry.isIntersecting) {
-     FetchPosts();
-     } else {
-     }
+        if (entry.isIntersecting) {
+            FetchPosts();
+        } else {
+            
+        }
      });
-     });
+});
 FetchPosts();
