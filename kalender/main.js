@@ -43,6 +43,7 @@ Bback.onclick = function(){
         NdateMonth = 12;
         NdateYear = dateYear-=1;
     }
+    console.log(NdateMonth);
     month.innerText= NdateMonth;
     year.innerText= NdateYear;
     FillDatum(NdateMonth, NdateYear);
@@ -53,6 +54,7 @@ Bnext.onclick = function(){
         NdateMonth = 1;
         NdateYear = dateYear+=1;
     }
+    console.log(NdateMonth);
     month.innerText= NdateMonth;
     year.innerText= dateYear;
     FillDatum(NdateMonth, NdateYear);
@@ -67,6 +69,7 @@ function MakeAgenda(){
 
 //datum dagen infullen
 function FillDatum(NdateMonth, NdateYear){
+    console.log(NdateMonth);
     let p =document.getElementsByClassName("datum");
     let firstDay = new Date(NdateYear, NdateMonth, 1);
     console.log(firstDay);
